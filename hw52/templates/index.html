@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        body{
+        background-color:#ADD8E6;
+        color: black;
+        }
+    </style>
 </head>
 <body>
-<h1>Articles</h1>
-<a href="/article/add">Создать запись</a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">To do list</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="article_add" href="/article/add">Create</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 {% for article in articles %}
     <h2>{{ article.title }}</h2>
     <p> {{article.description}}</p>
     <p> {{article.status}} </p>
     <p>{{article.datetime}}</p>
-    <p><a href="/article/?pk={{ article.pk }}"> Детали </a></p>
+    <p><a href="/article/?pk={{ article.pk }}"> Details </a></p>
 {% endfor %}
 </body>
 </html>
