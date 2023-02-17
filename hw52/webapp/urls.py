@@ -5,7 +5,8 @@ from webapp.articles import add_view
 
 
 urlpatterns = [
-    path('', index_view),
-    path('article/', article_view),
-    path('article/add/', add_view),
+    path('', index_view, name='index'),
+    path('article/', index_view),
+    path('article/<int:pk>', article_view, name='detailed_view'),
+    path('article/add/', add_view, name='article_add')
 ]
