@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}confirm{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content  %}
+<style>
+.container {
+  padding: 0;
+  margin: 30px;
+}
+
+</style>
+    <h1>Are sure?</h1>
+    <h2>Title: {{ article.title }}</h2>
+    <p> Description: {{ article.description }}</p>
+  <form action="{%url 'confirm' article.pk%}" method="post">
+      {% csrf_token %}
+      <p><input type="submit" value="Delete"></p>
+      <p><a href="{% url 'index' %}">Cancel</a></p>
+  </form>
+{% endblock %}

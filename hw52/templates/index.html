@@ -17,6 +17,9 @@
 <p> Status: {{article.status}} </p>
 <p> Date: {{article.datetime}}</p>
 <p><a href="{% url 'detailed_view' article.pk %}"> Details </a></p>
+<p><a href="{% url 'article_update' article.pk %}"> Update </a></p>
+<p><a href="{% url 'article_delete' article.pk %}"> Delete </a></p>
+
 {% endfor %}
 {%endblock%}
 

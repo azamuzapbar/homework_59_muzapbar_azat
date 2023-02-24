@@ -22,7 +22,7 @@
 
 
 </style>
-<form method="POST" action="{% url 'article_add' %}">
-{% include 'partial/article_form.html' %}
+<form method="POST" action="{% url 'article_update' article.pk %}">
+ {% include 'partial/article_form.html' %}
 </form>
 {% endblock %}
